@@ -1,4 +1,4 @@
-#  [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-url]][daviddm-image]
+# [![Build Status][travis-image]][travis-url]
 
 > generate an OpenFin installer or link
 
@@ -32,20 +32,10 @@ function(reason){
 
 ```
 
-```sh
-$ npm install --global openfin-installer
-$ openfin-installer --help
-```
-
 
 ## License
 
 MIT © [xaiver]()
 
 
-[npm-url]: https://npmjs.org/package/openfin-installer
-[npm-image]: https://badge.fury.io/js/openfin-installer.svg
-[travis-url]: https://travis-ci.org/datamadic/openfin-installer
-[travis-image]: https://travis-ci.org/datamadic/openfin-installer.svg?branch=master
-[daviddm-url]: https://david-dm.org/datamadic/openfin-installer.svg?theme=shields.io
-[daviddm-image]: https://david-dm.org/datamadic/openfin-installer
+[travis-url]: https://travis-ci.org/openfin/openfin-installer.svg

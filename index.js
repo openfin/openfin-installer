@@ -24,9 +24,9 @@ var url = [
 /**
  * generateInstallUrl
  * 
- * @param  {object} configTarget override the default config target from the app.json
- * @param  {string} fileName override the default name from app.json
- * @return {string} a configured url pointing to a web service that will generate an installer 
+ * @param  {object} configTarget Override the default config target from the app.json
+ * @param  {string} fileName Override the default name from app.json
+ * @return {string} A configured url pointing to a web service that will generate an installer 
  */
 var generateInstallUrl = function(fileName, configTarget ){
 	var configuredUrl = url.slice(0);
@@ -42,8 +42,8 @@ var generateInstallUrl = function(fileName, configTarget ){
  * fetchInstaller 
  *
  * Return a promise that resolves to a zip obtained via http(s) request
- * @param  {object} options @optional Object that can define a name and write destination 
- * @return {object}         A q promise
+ * @param  {object} options Optional object that can define a name and write destination 
+ * @return {object} A q promise
  */
 var fetchInstaller = function(options){
 
