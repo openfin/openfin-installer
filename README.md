@@ -39,3 +39,4 @@ MIT © [xaiver]()
 
 
 [travis-url]: https://travis-ci.org/openfin/openfin-installer.svg
+[travis-image]: https://api.travis-ci.org/openfin/openfin-installer.svg?branch=master
