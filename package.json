@@ -1,0 +1,42 @@
+{
+  "name": "openfin-installer",
+  "version": "0.0.0",
+  "description": "generate an openfin installer",
+  "homepage": "openfin.co",
+  "author": {
+    "name": "xaiver",
+    "email": ""
+  },
+  "repository": "datamadic/openfin-installer",
+  "license": "MIT",
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
+  "keywords": [
+    "openfin-installer",
+    "openfin"
+  ],
+  "dependencies": {
+    "meow": "^2.0.0",
+    "q": "^1.1.2",
+    "request": "^2.53.0"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-nodeunit": "^0.4.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-mocha-cli": "^1.11.0",
+    "jshint-stylish": "^1.0.0",
+    "load-grunt-tasks": "^1.0.0",
+    "time-grunt": "^1.0.0"
+  },
+  "scripts": {
+    "test": "grunt"
+  },
+  "bin": {
+    "openfin-installer": "cli.js"
+  }
+}
