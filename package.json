@@ -1,6 +1,6 @@
 {
   "name": "openfin-installer",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "generate an openfin installer",
   "homepage": "openfin.co",
   "author": {
