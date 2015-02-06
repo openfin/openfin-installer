@@ -1,9 +1,9 @@
 'use strict';
 
-var request = require('request'),
-		fs = require('fs'),
+var fs = require('fs'),
 		q = require('q'),
-		path = require('path');
+		path = require('path'),
+		https = require('https');
 
 var url = [
 	'https://dl.openfin.co/services/download?',
@@ -20,6 +20,7 @@ var url = [
 		},
 		configUrl: ''
 	};
+
 
 /**
  * generateInstallUrl
@@ -51,25 +52,35 @@ var fetchInstaller = function(options){
 		name: appJSON.startup_app.name + '-installer'
 	};
 	
+	options.destination = options.destination || '.';
+	
 	var deferred = q.defer(),
 			resolvedName = options.name || appJSON.startup_app.name + '-installer',
-			target =  generateInstallUrl(resolvedName);
+			target =  generateInstallUrl(resolvedName),
+			filePath = path.join(options.destination,  resolvedName + '.zip'),
+			zipFileStream = fs.createWriteStream(filePath);
 
-	request(target, function(error, response, payload){
-		if (error && response.statusCode === 200) {
-			deferred.reject(error);
-		}
+	zipFileStream.on('error', function  () {
+		deferred.reject('failed to write to destination');
+	});
 
-		if (options.destination) {
-			var filePath = path.join(options.destination,  resolvedName + '.zip');
-			fs.writeFile(filePath, payload, function(err){
-				if (err){
-					deferred.reject(err);
-				}
-			});
-		}
-
-		deferred.resolve(payload);
+	https.get(target, function(response) {
+	    if (response.statusCode !== 200) {
+	        deferred.reject('Download Failed. Status code:' + response.statusCode);
+	    } else {
+	    		if (options.destination) {
+	    			response.pipe(zipFileStream);
+	    			zipFileStream.on('end', function  () {
+							deferred.resolve(response);
+						});
+	    		}
+	    		else {
+	    			deferred.resolve(response);
+	    		}
+	    }
+	})
+	.on('error', function(e) {
+	    deferred.reject('Download Failed. ' + e.toString() + '\n\nRequested Target:\n' + target);
 	});
 
 	return deferred.promise;
