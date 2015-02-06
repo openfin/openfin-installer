@@ -17,7 +17,7 @@ $ npm install --save openfin-installer
 ```js
 var openfinInstaller = require('openfin-installer')({...your config obj...});
 
-openfinInstaller.generateInstallUrl('YOUR CONFIG URL HERE');
+openfinInstaller.generateInstallUrl(<NAME HERE>,<YOUR CONFIG URL HERE>);
 
 openfinInstaller.fetchInstaller({
 	destination: 'dist',
