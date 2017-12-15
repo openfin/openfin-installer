@@ -6,7 +6,7 @@ var fs = require('fs'),
 		https = require('https');
 
 var url = [
-	'https://dl.openfin.co/services/download?',
+	'https://install.openfin.co/download?',
 	'fileName=',
 	'openfin-installer',
 	'&config=',
