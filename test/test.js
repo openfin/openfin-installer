@@ -27,7 +27,7 @@ describe('openfin-installer', function() {
 			});
 
 			it('should return a default reachable link to the hello openfin app', function() {
-				var validLInk = 'https://dl.openfin.co/services/download?fileName=openfin-installer&config=https://demoappdirectory.openf.in/desktop/config/apps/OpenFin/HelloOpenFin/app.json';
+				var validLInk = 'https://install.openfin.co/download?fileName=openfin-installer&config=https://demoappdirectory.openf.in/desktop/config/apps/OpenFin/HelloOpenFin/app.json';
 				expect(generateInstallUrl('openfin-installer')).to.equal(validLInk);
 			});
 		}); //end behavior description 
