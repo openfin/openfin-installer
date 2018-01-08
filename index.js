@@ -93,7 +93,6 @@ var fetchInstaller = function(options){
 	    rvmConfig = options.rvmConfig || null,
 	    supportEmail = options.supportEmail || null,
 	    dnl = options.dnl || null,
-	    destination = options.d || options.destination,
 	    config = options.config || null;
 
 	options.destination = options.destination || '.';
